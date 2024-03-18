@@ -1,0 +1,37 @@
+.tablist {
+    width: 120px;
+    height: 35px;
+    background-color: #999;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+
+    &-title {
+        flex: 1;
+        display: block;
+        margin-right: 4px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-left: 4px;
+    }
+
+    &-icon {
+        font-size: 10px;
+        transform: scale(.7);
+        color: #fff;
+        padding: 4px;
+        border-radius: 4px;
+    }
+
+    &-icon:hover {
+        background-color: #cccccc66;
+    }
+}

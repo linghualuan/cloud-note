@@ -1,0 +1,133 @@
+{
+  "name": "cloud-note",
+  "version": "1.1.0",
+  "main": "main.js",
+  "private": true,
+  "author": "linghualuan",
+  "repository": "https://github.com/linghualuan/cloud-note.git",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "electron-is-dev": "^1.1.0",
+    "electron-store": "^8.2.0",
+    "qiniu": "^7.11.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "dev": "concurrently \"wait-on http://localhost:3000 && electron .\" \"cross-env BROWSER=none npm start\"",
+    "pack": "electron-builder --dir",
+    "prepack": "npm run build",
+    "dist": "electron-builder",
+    "predist": "npm run build",
+    "release": "cross-env electron-builder",
+    "prerelease": "npm run build"
+  },
+  "homepage": "./",
+  "build": {
+    "appId": "CloudNote",
+    "productName": "七牛云文档",
+    "copyright": "Copyright c year ${author}",
+    "extends": null,
+    "pubilc": ["github"],
+    "files": [
+      "build/**/*",
+      "node_modules/**/*",
+      "settings/**/*",
+      "package.json",
+      "main.js",
+      "./src/menuTemplate.js",
+      "./src/AppWindow.js",
+      "./src/utils/QiuniuManager.js",
+      "./preload.js"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "mac": {
+      "category": "public.app-category.productivity",
+      "artifactName": "${productName}-${version}-${arch}.${ext}"
+    },
+    "dmg": {
+      "background": "assets/appdmg.png",
+      "icon": "assets/icon.icns",
+      "iconSize": 100,
+      "contents": [
+        {
+          "x": 380,
+          "y": 280,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 110,
+          "y": 280,
+          "type": "file"
+        }
+      ],
+      "window": {
+        "width": 500,
+        "height": 500
+      }
+    },
+    "win": {
+      "target": [
+        "msi",
+        "nsis"
+      ],
+      "icon": "assets/icon.ico",
+      "artifactName": "${productName}-Web-Setup-${version}.${ext}",
+      "publisherName": "Viking Zhang"
+    },
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false,
+      "perMachine": false
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@electron/remote": "^2.1.2",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "easymde": "^2.18.0",
+    "electron": "^29.1.1",
+    "electron-builder": "^24.13.3",
+    "node-sass": "^7.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^9.1.0",
+    "react-scripts": "5.0.1",
+    "react-simplemde-editor": "^5.2.0",
+    "redux": "^5.0.1",
+    "redux-thunk": "^3.1.0",
+    "sass-loader": "^14.1.1",
+    "scss": "^0.2.4",
+    "uuid": "^9.0.1",
+    "wait-on": "^7.2.0",
+    "web-vitals": "^2.1.4",
+    "webpack-cli": "^5.1.4"
+  }
+}

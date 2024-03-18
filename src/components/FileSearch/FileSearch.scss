@@ -1,0 +1,42 @@
+.FileSearch {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #99CCFF;
+    padding: 0 10px;
+    user-select: none;
+
+    &-input {
+        flex: 1;
+        input {
+            width: 90%;
+            border-radius: 4px;
+            border: none;
+            height: 32px;
+            padding-left: 10px;
+            box-sizing: border-box;
+            border: #ccc solid 1px;
+        }
+
+        input:focus {
+            outline-color: #ccc;
+        }
+    }
+
+    &-button {
+        width: 60px;
+
+        .button-font {
+            font-size: 20px;
+            color: #333;
+            transition: all .2s;
+        }
+
+        .button-font:hover {
+            cursor: pointer;
+            color: #888;
+            transition: all .2s;
+        }
+    }
+}

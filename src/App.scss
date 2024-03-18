@@ -1,0 +1,15 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+
+  &-left {
+    flex: 1;
+    min-width: 400px;
+  }
+
+  &-right {
+    flex: 4;
+    min-height: 600px;
+  }
+}

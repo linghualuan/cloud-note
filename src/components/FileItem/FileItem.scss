@@ -1,0 +1,91 @@
+.fileitem {
+    height: 50px;
+    background-color: #ccc;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    transition: all .2s;
+
+    &-title {
+        flex: 1;
+        height: 100%;
+        text-align: left;
+        overflow: hidden;
+        
+        span:nth-child(1) {
+            margin-right: 10px;
+            font-size: 24px;
+        }
+
+        &-input {
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            input {
+                border: none;
+                outline: none;
+                height: 26px;
+                border-radius: 2px;
+                padding-left: 8px;
+            }
+        }
+
+        &-content {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    &-title:hover {
+        cursor: pointer;
+    }
+
+    &-btns {
+        width: auto;
+
+        button {
+            border: none;
+            width: 50px;
+            height: 30px;
+            border-radius: 2px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        &-edit {
+            margin-right: 6px;
+            background-color: #0066CC;
+        }
+        &-edit:active {
+            background-color: #0066CCBB;
+        }
+
+        &-delete {
+            background-color: #009966;
+        }
+
+        &-close {
+            color: #333;
+            transition: color .2s;
+        }
+
+        &-close:hover {
+            color: #888;
+            cursor: pointer;
+            transition: color .2s;
+        }
+    }
+}
+
+.fileitem:hover {
+    background-color: #eee;
+    transition: all .2s;
+}
