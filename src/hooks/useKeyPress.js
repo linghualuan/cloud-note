@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 
 const useKeyPress = (dom, targetKeyCode) => {
     const [keyPressed, setKeyPressed] = useState(false)
-    console.log(dom)
 
     function keyUpHandler({ keyCode }) {
         if (targetKeyCode === keyCode) {
